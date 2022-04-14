@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
+    "start": "yarn storybook",
     "build": "rm -rf ./dist && babel src --extensions '.tsx,.ts' -d dist && yarn build-types",
     "build-types": "yarn tsc",
     "tsc": "tsc",

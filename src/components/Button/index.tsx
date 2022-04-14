@@ -1,15 +1,24 @@
 import React from "react";
+import Loading from "../Loading";
 import * as S from "./styles";
 export interface IButton {
-  text: string;
-  size?: "Default" | "Medium" | "Large" | "XLarge";
+  children: string;
+  size: "Default" | "Medium" | "Large" | "XLarge";
   disabled?: boolean;
+  loading?: boolean;
+  onClick: () => void;
 }
 
-const Button = ({ text, size, disabled = false }: IButton) => {
+const Button = ({ children, size, disabled, loading, onClick }: IButton) => {
+  const content = loading ? <Loading /> : children;
+
   return (
-    <S.PartouButton className={size} disabled={disabled}>
-      {text}
+    <S.PartouButton
+      className={size}
+      disabled={disabled || false}
+      onClick={onClick}
+    >
+      {content}
     </S.PartouButton>
   );
 };

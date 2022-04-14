@@ -1,10 +1,16 @@
 import React from "react";
+import * as S from "./styles";
+interface IButton {
+  text: string;
+  size?: "Default" | "Medium" | "Large" | "XLarge";
+  disabled?: boolean;
+}
 
-const Button = () => {
+const Button = ({ text, size, disabled = false }: IButton) => {
   return (
-    <button style={{ border: "none", padding: 0, margin: "10px" }}>
-      Heelloooooou
-    </button>
+    <S.PartouButton className={size} disabled={disabled}>
+      {text}
+    </S.PartouButton>
   );
 };
 

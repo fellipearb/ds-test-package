@@ -1,13 +1,15 @@
 import React from "react";
+import * as S from "./styles";
 
-const Button = () => {
-  return /*#__PURE__*/React.createElement("button", {
-    style: {
-      border: "none",
-      padding: 0,
-      margin: "10px"
-    }
-  }, "Heelloooooou");
+const Button = ({
+  text,
+  size,
+  disabled = false
+}) => {
+  return /*#__PURE__*/React.createElement(S.PartouButton, {
+    className: size,
+    disabled: disabled
+  }, text);
 };
 
 export default Button;

@@ -1,8 +1,10 @@
 /// <reference types="react" />
 export interface IButton {
-    text: string;
-    size?: "Default" | "Medium" | "Large" | "XLarge";
+    children: string;
+    size: "Default" | "Medium" | "Large" | "XLarge";
     disabled?: boolean;
+    loading?: boolean;
+    onClick: () => void;
 }
-declare const Button: ({ text, size, disabled }: IButton) => JSX.Element;
+declare const Button: ({ children, size, disabled, loading, onClick }: IButton) => JSX.Element;
 export default Button;

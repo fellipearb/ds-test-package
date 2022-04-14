@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./styles";
-interface IButton {
+export interface IButton {
   text: string;
   size?: "Default" | "Medium" | "Large" | "XLarge";
   disabled?: boolean;

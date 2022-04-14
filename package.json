@@ -1,12 +1,13 @@
 {
   "name": "@fellipearb/ds-test-package",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "start": "react-scripts start",
-    "build": "babel src --extensions '.tsx,.ts' -d dist && npx -p typescript tsc dist/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir ./dist/types",
+    "build": "rm -rf ./dist && babel src --extensions '.tsx,.ts' -d dist && yarn build-types",
+    "build-types": "yarn tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "tsc": "tsc",

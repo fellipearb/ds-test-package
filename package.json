@@ -1,9 +1,9 @@
 {
   "name": "@fellipearb/ds-test-package",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
-  "types": "types/src/index.d.ts",
+  "types": "types/index.d.ts",
   "scripts": {
     "start": "react-scripts start",
     "build": "babel src --extensions '.tsx,.ts' -d dist && npx -p typescript tsc dist/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir ./dist/types",

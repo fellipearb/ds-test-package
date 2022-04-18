@@ -14,28 +14,32 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  size: "Default",
+  size: "default",
+  variant: "secondary",
   children: "Default",
-  onClick: () => alert("Click on Default button"),
+  onClick: () => console.log("Click on Default button"),
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: "Medium",
+  size: "medium",
+  variant: "primary",
   children: "Medium",
-  onClick: () => alert("Click on Medium button"),
+  onClick: () => console.log("Click on Medium button"),
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: "Large",
+  size: "large",
+  variant: "tertiary",
   children: "Large",
-  onClick: () => alert("Click on Large button"),
+  onClick: () => console.log("Click on Large button"),
 };
 
 export const XLarge = Template.bind({});
 XLarge.args = {
-  size: "XLarge",
+  size: "xlarge",
+  variant: "secondary",
   children: "XLarge",
-  onClick: () => alert("Click on XLarge button"),
+  onClick: () => console.log("Click on XLarge button"),
 };

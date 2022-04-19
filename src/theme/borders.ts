@@ -1,16 +1,18 @@
-export const borders = {
+import { theme } from "./";
+
+export const borders: any = {
   borderRadius: {
     round: "100px",
-    default: "{space.scale.8}",
-    small: "{space.scale.4}",
-    none: "{space.scale.0}",
+    default: theme.spacing["spacing-8"],
+    small: theme.spacing["spacing-4"],
+    none: theme.spacing["spacing-0"],
   },
   borderWidth: {
     border: "1px",
-    "Token 1": {
+    default: {
       style: "solid",
-      width: "{border.borderWidth.border}",
-      color: "{colors.neutral.borderHover}",
+      width: "1px",
+      color: theme.colors.neutral.borderHover,
     },
   },
 };

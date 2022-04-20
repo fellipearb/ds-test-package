@@ -8,7 +8,6 @@ export const borders: any = {
     none: theme.spacing["spacing-0"],
   },
   borderWidth: {
-    border: "1px",
     default: {
       style: "solid",
       width: "1px",

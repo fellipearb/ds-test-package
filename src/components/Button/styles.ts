@@ -1,52 +1,72 @@
 import styled from "styled-components";
-
-interface ButtonProps {
-  disabled: boolean;
-}
+import { spacing } from "./../../theme/spacing";
+import { colors } from "./../../theme/colors";
 
 export const PartouButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: 8px;
-  background-color: ${(props: ButtonProps) =>
-    props.disabled ? "#17192614" : "#122eb5"};
-  color: ${(props: ButtonProps) => (props.disabled ? "#ADAEB3" : "#FFFFFF")};
+  border-radius: ${spacing["spacing-8"]};
   cursor: pointer;
-  transition: ease-in-out all 0.2s;
+  transition: ease-in-out all 0.125s;
+
+  &.primary {
+    background-color: ${colors.interactive.backgroundStrong};
+    color: ${colors.base.white};
+    &:hover {
+      background-color: ${colors.interactive.backgroundStrongHover};
+    }
+    &:focus {
+      outline: 2px solid ${colors.interactive.borderActive};
+      outline-offset: 0.75px;
+    }
+  }
+  &.primary.disabled {
+    background-color: ${colors.interactive.backgroundStrongDisabled};
+    color: ${colors.base.white};
+  }
+  &.secondary {
+    background-color: ${colors.interactive.field};
+    color: ${colors.interactive.text};
+    &:hover {
+      background-color: ${colors.interactive.fieldHover};
+    }
+    &:focus {
+      outline: 2px solid ${colors.interactive.borderActive};
+      outline-offset: 0.75px;
+    }
+  }
+  &.secondary.disabled {
+    background-color: ${colors.interactive.field};
+    color: ${colors.base.white};
+  }
+  &.tertiary {
+    background-color: ${colors.base.white};
+    color: ${colors.interactive.text};
+    &:hover {
+      background-color: ${colors.interactive.field};
+      color: ${colors.interactive.textHover};
+    }
+    &:focus {
+      background-color: ${colors.interactive.fieldActive};
+      color: ${colors.interactive.textHover};
+    }
+  }
+  &.tertiary.disabled {
+    color: ${colors.interactive.textDisabled};
+  }
 
   &.Default {
-    width: 84px;
-    height: 32px;
+    padding: ${spacing["spacing-8"]} ${spacing["spacing-16"]};
   }
   &.Medium {
-    width: 98px;
-    height: 40px;
+    padding: ${spacing["spacing-10"]} ${spacing["spacing-24"]};
   }
   &.Large {
-    width: 106px;
-    height: 48px;
+    padding: ${spacing["spacing-14"]} ${spacing["spacing-28"]};
   }
   &.XLarge {
-    width: 130px;
-    height: 56px;
+    padding: ${spacing["spacing-18"]} ${spacing["spacing-36"]};
   }
-
-  ${(props: ButtonProps) =>
-    Boolean(!props.disabled) &&
-    `
-        &:focus {
-            outline: 2px solid #3e50da;
-            outline-offset: 2px;
-        }
-
-        &:active {
-            background-color: #070e2c !important;
-        }
-
-        &:hover {
-            background-color: #0d2177;
-        }
-    `};
 `;

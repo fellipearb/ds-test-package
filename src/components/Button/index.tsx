@@ -5,13 +5,10 @@ import "./index.css";
 export interface IButton {
   children: string;
   size: "default" | "medium" | "large" | "xlarge";
-  variant?: "primary" | "secondary" | "tertiary" | "ghost";
+  variant?: "primary" | "secondary" | "tertiary";
   disabled?: boolean;
-  radio?: boolean;
-  radioActive?: boolean;
-  radioValue?: string;
-  radioName?: string;
-  radioPosition?: "right" | "left";
+  icon?: string;
+  iconPosition?: "right" | "left";
   loading?: boolean;
   onClick: () => void;
 }
@@ -21,11 +18,8 @@ const Button = ({
   size,
   variant,
   disabled,
-  radio,
-  radioActive = false,
-  radioValue,
-  radioName,
-  radioPosition = "left",
+  icon,
+  iconPosition = "left",
   loading,
   onClick,
 }: IButton) => {
@@ -34,25 +28,14 @@ const Button = ({
   return (
     <S.PartouButton
       className={`${variant} ${size} ${Boolean(disabled) && "disabled"} ${
-        Boolean(radio) && "radio"
+        Boolean(icon) && "icon"
       } ${
-        radioPosition === "left" ? "rl" : "rr"
+        iconPosition === "left" ? "iconLeft" : "iconRight"
       } w-auto flex items-center justify-center rounded-lg transition-all`}
       disabled={disabled || false}
       onClick={onClick}
     >
-      {Boolean(radio) && (
-        <label className={`${Boolean(radioActive) && "radioActive"}`}>
-          <input
-            type="checkbox"
-            value={radioValue}
-            name={radioName}
-            checked={radioActive}
-            disabled={disabled}
-            hidden={true}
-          />
-        </label>
-      )}
+      {Boolean(icon) && <img src={icon} alt="Button Alt" />}
       {content}
     </S.PartouButton>
   );

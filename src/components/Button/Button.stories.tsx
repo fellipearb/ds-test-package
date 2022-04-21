@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Button from "./";
+import { PlaceholderIcon } from "assets";
 
 export default {
   title: "PartouApp/Button",
@@ -17,6 +18,7 @@ Default.args = {
   size: "default",
   variant: "secondary",
   children: "Default",
+  icon: PlaceholderIcon,
   onClick: () => console.log("Click on Default button"),
 };
 

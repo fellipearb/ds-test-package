@@ -5,27 +5,27 @@
 @layer components {
   /* VARIANTS */
   .primary {
-    @apply border-0 bg-blue-600 text-white hover:bg-blue-900 
-    focus:outline-2 focus:outline-offset-1 focus:outline-blue-700 focus:outline;
+    @apply border-0 bg-interactive-backgroundStrong text-base-white hover:bg-interactive-backgroundStrongHover 
+    focus:outline-2 focus:outline-offset-1 focus:outline-interactive-borderActive focus:outline active:bg-interactive-backgroundStrongActive;
   }
   .primary.disabled {
-    @apply bg-gray-300  text-gray-400;
+    @apply bg-base-gray100  text-base-gray300;
   }
   .secondary {
-    @apply border border-blue-300 bg-blue-100 text-blue-600 hover:text-blue-700 hover:border-blue-700
-    focus:border-blue-600 focus:text-blue-600 focus:rounded-full;
+    @apply bg-interactive-field text-interactive-text hover:text-interactive-textHover hover:bg-interactive-fieldHover
+    focus:outline-2 focus:outline-offset-1 focus:outline-interactive-borderActive focus:outline active:bg-interactive-fieldActive;
   }
   .secondary.disabled {
-    @apply bg-blue-50 text-blue-100  border-gray-200;
+    @apply bg-interactive-field text-base-white;
   }
-  .tertiary,
-  .ghost {
-    @apply border-0 bg-transparent text-blue-700 w-20 h-8;
+  .tertiary {
+    @apply border-0 bg-transparent text-interactive-text hover:bg-interactive-field
+    focus:outline-2 focus:outline-offset-1 focus:outline-interactive-borderActive focus:outline active:bg-interactive-fieldActive;
   }
 
   /* SIZES */
   .default {
-    @apply px-5 py-2;
+    @apply px-5 py-8;
   }
   .medium {
     @apply px-6 py-2.5;
@@ -34,44 +34,40 @@
     @apply px-7 py-3.5;
   }
   .xlarge {
-    @apply px-10 py-4;
+    @apply px-10 py-18;
   }
 
-  /* RADIO BUTTON MODE */
-  .radio label {
-    @apply rounded-full bg-transparent border-2 border-solid;
-  }
-  .default.radio label {
-    @apply w-3.5 h-3.5;
-  }
-  .medium.radio,
-  .large.radio,
-  .xlarge.radio label {
-    @apply w-5 h-5;
-  }
-  .primary.radio label {
-    @apply border-white;
-  }
-  .secondary.radio label {
-    @apply border-blue-600;
+  /* icons BUTTON MODE */
+  .icon.default img {
+    @apply w-14 h-14;
   }
 
-  /* RADIO BUTTON POSITION */
-  .rl {
+  .icon.medium img,
+  .icon.large img,
+  .icon.xlarge img {
+    @apply w-20 h-20;
+  }
+
+  .icon.primary img {
+    @apply stroke-white;
+  }
+
+  /* icons BUTTON POSITION */
+  .iconLeft {
     @apply flex-row;
   }
-  .rl label {
-    @apply mr-4;
+  .iconLeft img {
+    @apply mr-8;
   }
-  .rr {
+  .iconRight {
     @apply flex-row-reverse;
   }
-  .rr label {
-    @apply ml-4;
+  .iconRight img {
+    @apply ml-8;
   }
 
-  /* RADIO BUTTON ACTIVE MODE */
-  .radio .radioActive {
+  /* icons BUTTON ACTIVE MODE */
+  .icons .iconsActive {
     @apply bg-blue-400 p-0.5;
   }
 }
